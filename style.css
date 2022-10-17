@@ -7,7 +7,7 @@
   }
 
 body, html {
-    overflow: hidden;
+    overflow-y: auto;
     font-family: 'Prompt', sans-serif;
     height: 100%;
     background: radial-gradient(ellipse at bottom, #2e2a3e 0%,#090a0f 100%);
@@ -580,6 +580,16 @@ body, html {
     }
 }
 
+#stars {
+    overflow: hidden;
+}
+#stars2 {
+    overflow: hidden;
+}
+#stars3 {
+    overflow: hidden;
+}
+
 h1 {
     font-size: 50px;
     color: white;
@@ -595,7 +605,7 @@ h2 {
 }
 
 .intro-span {
-
+    margin-bottom: 4rem;
     color: white;
     overflow: hidden;
     border-right: 1px solid white;
@@ -615,17 +625,25 @@ h2 {
 
 p {
     color: #ffffff;
-}
-
-@keyframes spin {
-    from { transform: rotateY(0deg);}
-    to { transform: rotateY(360deg);}
-}
+} 
 
 .navbar {
     margin: 3rem;
     display: flex;
     justify-content: center;
+}
+
+/* .spinning-star {
+    text-decoration: none;
+    display: block;
+    width: 60px;
+    left: 0; right: 0; bottom: 0; top: 0;
+    margin: auto;
+    animation: spin 15s infinite linear;
+    -webkit-animation: spin 15s infinite linear;
+} */
+.spinning-star img {
+    width: 100%;
 }
 
 .spinning-star {
@@ -634,10 +652,14 @@ p {
     width: 60px;
     left: 0; right: 0; bottom: 0; top: 0;
     margin: auto;
-    animation: spin 15s infinite linear;
+    animation: rotate 12s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
 }
-.spinning-star img {
-    width: 100%;
+  
+@keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
 }
 
 ul {
@@ -1053,24 +1075,240 @@ section {
 @media (max-width: 1320px) {
     body {
         overflow-y: scroll;
-        /* height: 800px; */
+    }
+    #stars {
+        overflow: hidden;
+    }
+    #stars2 {
+        overflow: hidden;
+    }
+    #stars3 {
+        overflow: hidden;
     }
     .resume-wrapper {
         width: 60rem;
         height: 57rem;
+        margin-bottom: 5rem;
     }
     .resume-grid-container {
         display: grid;
         padding-bottom: 2rem;
         grid-template-areas: 
             'header header'
-            'about-me skills'
-            'about-me skills'
-            'languages skills'
-            'education experience'
-            'education experience';
-        grid-template-rows: 9rem 9rem 9rem 9rem 9rem 9rem;
+            'about-me education'
+            'about-me education'
+            'languages experience'
+            'skills skills'
+            'skills skills';
+        grid-template-rows: 9rem 9rem 8rem 11rem 9rem 9rem;
         grid-template-columns: 50% 50%;
     }
+    .grid-item-name-2 {
+        margin-top: 2rem;
+    }
+    .item5::before, .item6::after {
+        content: none;
+    }
+    .item3::after {
+        content: '';
+        right: 0;
+        top: 0;
+        width: 1px;
+        background: white;
+        height: 100%;
+        animation: none;
+    }
+    .item4 {
+        position: relative;
+    }
+    .item4 > h3 {
+        padding-top: 2rem;
+    }
+    .item4::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 1px;
+        width: 100%;
+        background: white;
+
+        animation: lineSk 1.5s forwards;
+        animation-timing-function: ease-out;
+    }
+    @keyframes lineSk {
+        from {
+            transform-origin: center;
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(89.5%);
+        }
+    }
 }
-  
+@media (max-width: 1024px){
+    .resume-wrapper {
+        height: 63rem;
+    }
+    .resume-grid-container {
+        display: grid;
+        padding-bottom: 2rem;
+        grid-template-areas: 
+            'header header'
+            'about-me education'
+            'about-me education'
+            'languages experience'
+            'skills skills'
+            'skills skills';
+        grid-template-rows: 9rem 13rem 8rem 12rem 9rem 9rem;
+        grid-template-columns: 50% 50%;
+    }
+    .portfolio-cards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 940px) {
+    .resume-wrapper {
+        height: 65rem;
+    }
+}
+@media (max-width: 768px){
+    .menu-item {
+        display: flex;
+        justify-content: center;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .photo img {
+        width: 432px;
+    }
+    .intro > h1{
+        font-size: 37px;
+    }
+    .portfolio-cards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .portfolio-wrapper {
+        margin-top: 2rem;
+    }
+    .resume-wrapper {
+        height: 89rem;
+    }
+    .resume-grid-container {
+        display: grid;
+        padding-bottom: 2rem;
+        grid-template-areas: 
+            'header'
+            'about-me'
+            'about-me'
+            'languages'
+            'education'
+            'education'
+            'experience'
+            'skills'
+            'skills'
+            'skills';
+        grid-template-rows: 9rem 8rem 8rem 11.5rem 7rem 10rem 10rem 9rem 7rem 9rem;
+        grid-template-columns: 100%;
+    }
+    .item2::before, .item3::after, .item3::before, .item4::before, .item5::before, .item6::before {
+        content: none;
+    }
+    .item3::before, .item5::before, .item6::before, .item4::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+	    height: 1px;
+	    background: white;
+	    animation: lineR 1.5s forwards;
+        animation-timing-function: ease-out;
+    }
+    @keyframes lineR {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 100%;
+        }
+    }
+    .grid-item {
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+    .item5 > h3 {
+        margin-top: 2rem;
+    }
+}
+@media (max-width: 678px) {
+    .resume-grid-container {
+        grid-template-rows: 9rem 8rem 8rem 11.5rem 7rem 11rem 10rem 9rem 7rem 9rem;
+    }
+    .resume-wrapper {
+        height: 95rem;
+    }
+}
+@media (max-width: 591px) {
+    .grid-item {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media (max-width: 490px) {
+    .photo img {
+        width: 302px;
+    }
+    .intro > h1{
+        font-size: 25px;
+    }
+    .resume-wrapper {
+        padding: 0 2rem;
+    }
+}
+@media (max-width: 457px) {
+    .navbar {
+        margin: 2rem;
+    }
+    .resume-grid-container {
+        grid-template-rows: 9rem 8rem 9.5rem 11.5rem 7rem 15rem 11rem 9rem 7rem 9rem;
+    }
+    .resume-wrapper {
+        height: 107rem;
+    }
+    .portfolio-cards-item-1, .portfolio-cards-item-2 {
+        width: 15rem;
+        height: 15rem;
+    }
+    .portfolio-heading, .contact-heading {
+        font-size: 38px;
+    }
+    .email-btn {
+        font-size: 14px;
+    }
+}
+@media (max-width: 377px) {
+    .resume-grid-container {
+        grid-template-rows: 9rem 9rem 9.5rem 11.5rem 7rem 17rem 11rem 9rem 7rem 9rem;
+    }
+    .resume-wrapper {
+        height: 118rem;
+    }
+}
+@media (max-width: 342px) {
+    .photo img {
+        width: 250px;
+    }
+    .intro > h1{
+        font-size: 20px;
+    }
+    .item1 > h2 {
+        font-size: 24px;
+    }
+    .my-intro, .info {
+        font-size: 14px;
+    }
+}
