@@ -633,6 +633,10 @@ p {
     justify-content: center;
 }
 
+.openMenu {
+    display: none !important;
+}
+
 /* .spinning-star {
     text-decoration: none;
     display: block;
@@ -644,6 +648,10 @@ p {
 } */
 .spinning-star img {
     width: 100%;
+}
+.hamburger img {
+    width: 100%;
+    padding-top: 12px;
 }
 
 .spinning-star {
@@ -1257,6 +1265,93 @@ section {
         margin-left: 0;
         margin-right: 0;
     }
+    .openMenu {
+        display: inline-block !important;
+        transition: top 1s ease 0.5s;
+    }
+    .star {
+        display: none;
+    }
+    .menu-container {
+        display: flex;
+        position: relative;
+        padding-bottom: 3rem;
+        transition: top 0.7s ease;
+    }
+    .hamburger {
+        text-decoration: none;
+        display: block;
+        width: 40px;
+        left: 0; right: 0; bottom: 0; top: 0;
+        margin: auto;
+    }
+    .flip1, .flip2 {
+        animation-duration: 17s;
+        animation-iteration-count: infinite;
+        animation-timing-function:linear;
+        backface-visibility: hidden;
+        position: absolute;
+    }
+    @keyframes flip1 {
+        from { 
+            transform: rotateY(0deg); 
+        }
+        to { 
+            transform: rotateY(360deg); 
+        }
+    }
+    
+    div.flip1 {
+        animation-name: flip1;
+    }
+    
+    @keyframes flip2 {
+        from { 
+            transform: rotateY(-180deg); 
+        }
+        to { 
+            transform: rotateY(180deg); 
+        }
+    }
+    
+    div.flip2 {
+        animation-name: flip2;
+    }
+    .navbar {
+        position: relative;
+        transition: top 1s ease 0.5s;
+    }
+    .mainMenu {
+        height: 90vh;
+        position: fixed;
+        top: -100%;
+        right: 0px;
+        left: 0px;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #282436;
+        transition: top 1s ease 0.5s;
+        display: flex;
+    }
+    .menu-item {
+        display: flex;
+        position: relative;
+        width: 100vw;
+    }
+    .menu-item:not(:last-child):after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+	    height: 1px;
+	    background: white;
+    }
+
+
+
 }
 @media (max-width: 490px) {
     .photo img {
