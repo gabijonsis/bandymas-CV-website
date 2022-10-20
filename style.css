@@ -1372,7 +1372,9 @@ section {
 	    height: 1px;
 	    background: white;
     }
-
+    .portfolio-cards-item-1, .portfolio-cards-item-2 {
+        background-size: 14rem;
+    }
 
 
 }
@@ -1406,6 +1408,15 @@ section {
     }
     .email-btn {
         font-size: 14px;
+    }
+    .portfolio-cards-item-1, .portfolio-cards-item-2 {
+        background-size: 12rem;
+    }
+    .portfolio-cards-item-card-inner > h3 {
+        font-size: 0.875em;
+    }
+    .portfolio-cards-item-card-inner > p {
+        font-size: 0.675em;
     }
 }
 @media (max-width: 377px) {
