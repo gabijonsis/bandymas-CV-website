@@ -15,3 +15,7 @@ function toggleMenu() {
         toggleStatus = 1;
     }
 }
+
+window.addEventListener('popstate', (event) => {
+    mainMenu.style.top = '-100%';
+});
