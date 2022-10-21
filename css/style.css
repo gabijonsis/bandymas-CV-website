@@ -1011,7 +1011,7 @@ section {
 
 .portfolio-cards-item-1 {
     display: inline-block;
-    background: black url("images/dancery-logo.png") no-repeat center;
+    background: black url("../images/dancery-logo.png") no-repeat center;
     position: relative;
     width: 18rem;
     height: 18rem;
@@ -1031,7 +1031,7 @@ section {
 }
 .portfolio-cards-item-2 {
     display: inline-block;
-    background: #050406 url("images/world-website-logo.jpg") no-repeat center;
+    background: #050406 url("../images/world-website-logo.jpg") no-repeat center;
     background-size: contain;
     position: relative;
     width: 18rem;
