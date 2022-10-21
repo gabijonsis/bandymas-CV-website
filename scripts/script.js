@@ -16,6 +16,6 @@ function toggleMenu() {
     }
 }
 
-window.addEventListener('popstate', (event) => {
+function closeNav() {
     mainMenu.style.top = '-100%';
-});
+}
