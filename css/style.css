@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url("images/cursor.svg") 15 15, auto;
+    cursor: url("../images/cursor.svg") 15 15, auto;
     /* outline: 1px solid tomato; */
   }
 
