@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url("/images/cursor.svg") 15 15, auto;
+    cursor: url("images/cursor.svg") 15 15, auto;
     /* outline: 1px solid tomato; */
   }
 
@@ -1011,7 +1011,7 @@ section {
 
 .portfolio-cards-item-1 {
     display: inline-block;
-    background: black url("/images/dancery-logo.png") no-repeat center;
+    background: black url("images/dancery-logo.png") no-repeat center;
     position: relative;
     width: 18rem;
     height: 18rem;
@@ -1031,7 +1031,7 @@ section {
 }
 .portfolio-cards-item-2 {
     display: inline-block;
-    background: #050406 url("/images/world-website-logo.jpg") no-repeat center;
+    background: #050406 url("images/world-website-logo.jpg") no-repeat center;
     background-size: contain;
     position: relative;
     width: 18rem;
